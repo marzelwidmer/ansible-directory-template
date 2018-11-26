@@ -5,3 +5,36 @@
 
 - name: Who I am?
   action: command /usr/bin/whoami
+
+- name: Creates Jenkins home directory
+  file:
+    path: /srv/jenkins_home
+    state: directory
+    owner: monkey
+    group: monkey
+    mode: 0775
+
+# works only ones...
+# - name: Docker Run
+#   command: 
+#     docker run --name jenkins \
+#       --restart always  -d \
+#       -p 8080:8080 \
+#       -p 50000:50000  \
+#       -v /srv/jenkins_home:/var/jenkins_home \
+#       -v /var/run/docker.sock:/var/run/docker.sock \
+#       -u jenkins:1000  \
+#       jenkinsci/blueocean 
+
+- name : Change permission for docker inside container
+  command: chmod 666 /var/run/docker.sock
+
+# Wait for jenkins running state...
+# After first login in  Jenkins this file don`t exist anymore
+- name: Find out what the initial Jenkins admin password is
+  slurp:
+    src: /srv/jenkins_home/secrets/initialAdminPassword
+  register: jenkinsPwd
+- debug:
+    msg: "{{ jenkinsPwd['content'] | b64decode }}"
+
