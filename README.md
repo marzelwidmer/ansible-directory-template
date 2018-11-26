@@ -80,9 +80,19 @@ server-type list:
 hcloud server-type list
 ```
 
+List availible key
+```
+ls -al ~/.ssh
+```
+
+List SSH Key
+```
+ssh-add -l
+```
+
 Generating a new SSH key
 ```bash
-ssh-keygen -t rsa -b 4096 -C "your@email-address"
+ssh-keygen -t rsa -b 4096 -C "your@email-address" -f ~/.ssh/id_rsa_hetzner
 ```
 
 Add SSH key to agent 
