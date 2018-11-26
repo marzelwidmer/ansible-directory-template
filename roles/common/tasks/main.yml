@@ -1,2 +1,7 @@
 ---
 # tasks file for common
+- name: Say hi
+  command: echo "hi ..."
+
+- name: Who I am?
+  action: command /usr/bin/whoami

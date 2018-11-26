@@ -9,5 +9,14 @@
   user: root
 
   roles:
-    - common
+    - { 
+        role: common, 
+        tags: [ 'common'] 
+    }
+    - {
+        role: nickjj.user, 
+        tags: [ 'user'] 
+    }
+    
+
 

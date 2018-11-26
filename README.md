@@ -58,15 +58,28 @@ roles/
     fooapp/               # ""
 </pre>
 
-
+# Install a Galaxy Role
+```
+ansible-galaxy install --roles-path roles  nickjj.user
+```
 
 # Test Ansible Setup
 
 ## Ping
+```
 ansible -i staging all -m ping --verbose --user root
+```
 
 ## Uptime
+```
 ansible -i staging all -a uptime --verbose --user root
+```
+
+# Call a playbook with tags
+```
+ansible-playbook -i staging  site.yml -t common,user
+```
+
 
 
 # Hetzner - hcloud #
