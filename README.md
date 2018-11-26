@@ -60,6 +60,14 @@ roles/
 
 
 
+# Test Ansible Setup
+
+## Ping
+ansible -i staging all -m ping --verbose --user root
+
+## Uptime
+ansible -i staging all -a uptime --verbose --user root
+
 
 # Hetzner - hcloud #
 
