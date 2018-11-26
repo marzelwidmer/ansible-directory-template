@@ -17,6 +17,10 @@
         role: nickjj.user, 
         tags: [ 'user'] 
     }
+    - {
+        role: geerlingguy.docker, 
+        tags: [ 'docker'] 
+    }
     
 
 

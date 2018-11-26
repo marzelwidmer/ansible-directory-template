@@ -60,7 +60,8 @@ roles/
 
 # Install a Galaxy Role
 ```
-ansible-galaxy install --roles-path roles  nickjj.user
+ansible-galaxy install --roles-path roles nickjj.user
+ansible-galaxy install --roles-path roles geerlingguy.docker
 ```
 
 # Test Ansible Setup
