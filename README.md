@@ -102,6 +102,23 @@ server-type list:
 hcloud server-type list
 ```
 
+Rebuild all server
+```bash
+    for x in n1.k8s-monkey.ch n2.k8s-monkey.ch n3.k8s-monkey.ch; hcloud server rebuild  $x --image centos-7; end
+```
+
+Copy keys
+```bash
+    for x in n1.k8s-monkey.ch n2.k8s-monkey.ch n3.k8s-monkey.ch; ssh-copy-id -i ~/.ssh/id_rsa_hetzner root@$x; end
+```
+
+Reset 
+
+```bash
+    for x in n1.k8s-monkey.ch n2.k8s-monkey.ch n3.k8s-monkey.ch; hcloud server reset $x; end
+```
+
+
 List availible key
 ```
 ls -al ~/.ssh

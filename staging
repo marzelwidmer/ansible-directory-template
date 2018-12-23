@@ -6,7 +6,7 @@
 
 
 [all]
-95.216.185.202
+ci.k8s-monkey.ch
 
-[app]
-95.216.185.202
+[ci]
+ci.k8s-monkey.ch
